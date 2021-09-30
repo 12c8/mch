@@ -1,0 +1,219 @@
+
+$ip = file_get_contents('http://kiemtraip.com/raw.php');
+date_default_timezone_set('Asia/Ho_Chi_Minh');
+$time=date('h:i');
+$ngay = date("d-m-Y");
+ $banner=
+"\r\r
+\033[0;97m╔════════════════════════════════════════════════╗
+\033[0;97m║\033[1;97m❥ \033[0;92mĐịa Chỉ iP Của Bạn Là: \033[1;97m$ip \033[1;97m       ║
+\033[0;97m║\033[1;97m❥ \033[0;92mBản quyền: \033[1;97mDoãn Đình \033[1;97m ║\033[0;97m❥ \033[1;92mĐồng Hồ: \033[1;97m$time \033[0;93m      ║
+\033[0;97m║\033[1;97m❥ \033[0;92mYoutube:\033[1;97mCám Chăm Chỉ \033[1;97m ║\033[1;97m❥ \033[0;92mHôm Nay: \033[1;97m$ngay\033[1;97m  ║
+\033[0;97m║\033[1;97m❥ \033[0;92mZalo: \033[1;97m0971.932.146 \033[1;97m   ║\033[1;97m❥ \033[0;90mChờ Đợi Là Chân Ái !\033[1;97m ║
+\033[0;97m║\033[1;97m❥ \033[0;92mMomo:\033[1;97m0971.932.146 \033[1;97m    ║\033[1;97m❥ \033[0;90mAce Cày Xu Vui Vẻ \033[1;97m   ║
+\033[0;97m║\033[1;97m❥ \033[0;92mFb:\033[1;97mfacebook.com/doandinh2004        \033[1;97m          ║
+\033[0;97m╚════════════════════════════════════════════════╝\n"; 
+
+ 
+
+error_reporting(0);
+$luc="\033[1;32m";
+$fg = 0;
+@system('clear');
+ 
+class setting {
+  
+  public function set ($s)
+  {
+    return $this->set_ck = $s;
+  }
+  public function get ()
+  {
+    return $this->set_ck;
+  }
+}
+$new = new setting;
+// input cookie 
+print $banner;
+chay(25);
+print "\033[1;32mNhập số cookie muốn chạy:\033[1;97m ";
+$stop_count = 1;
+$count = trim(fgets(STDIN));
+$acc=[];
+while($stop_count <= $count){
+  
+  $useragent = random_useragent();
+   
+  print "\033[1;32mNhập cookie số $stop_count:\033[1;97m ";
+  $ckhl = trim(fgets(STDIN));
+  $check = main_hacklike($ckhl, $useragent);
+  if(strpos($check,"HƯỚNG DẪN HACK LIKE") == true)
+  {
+    print "Cookie die!\n";
+    continue;
+  } else {
+   print "\033[1;32mLink post: \033[1;97m";
+   $post_link = trim(fgets(STDIN));
+   chay(25);
+   print $luc."\033[1;97m[\033[1;90m1\033[1;97m] \033[1;32mBuff Like\n\033[1;97m[\033[1;90m2\033[1;97m]\033[1;32m Buff Love\n\033[1;97m[\033[1;90m3\033[1;97m]\033[1;32m Buff Haha\n\033[1;97m[\033[1;90m4\033[1;97m] \033[1;32mBuff Wow\n\033[1;97m[\033[1;90m5\033[1;97m] \033[1;32mBuff Sad \n\033[1;97m[\033[1;90m6\033[1;97m] \033[1;32mBuff Phẫn Nộ\n";
+   chay(17);
+   print$luc."Muốn Buff Randum Thì Nhập 1,2,3,4\n";
+   chay(17);
+   print "\033[1;32mVui Lòng Nhập : \033[1;97m";
+   $action = trim(fgets(STDIN));
+   chay(17);
+   $change = change($action);
+   $name = explode('<',explode('<span class="fw-bold tick" style="padding-left: 10px; padding-right: 10px; border-radius: 40px; padding-top: 5px; padding-bottom: 5px; border: #fff dashed 1px; color: #fff; font-size: 12px; background-image: linear-gradient(to right top, #045bff, #0071fb, #0080f0, #008cde, #0095cb, #009bc2, #00a0b6, #00a3a8, #00a79c, #00aa87, #00ac6a, #04ac46);">', $check)[1])[0];
+  print $luc."\033[1;32mNhập Số Lượng Muốn Buff \033[1;97m(\033[1;90mMax 70\033[1;97m): ";
+  $amount = trim(fgets(STDIN));
+  @system('clear');
+  $thongtin = array("link"=>$post_link,"name"=>$name,"stt"=>$stop_count - 1,"user-agents"=>$useragent,"cookie"=>$ckhl,"data"=>$change."link=".$post_link."&sl=".$amount);
+  $acc[] = $thongtin;
+  $stop_count++;
+  }
+}
+$new->set($acc);
+$acc = $new->get();
+print $banner;
+chay(25);
+$result = getid($post_link);
+ 
+if (strpos($result, 'error') !== false) {
+  $js = json_decode($result,true);
+  echo $red.$js['error']."\n";
+  exit;
+}
+$ui1 = explode('id":',$result)[1];
+$uid = explode(',',$ui1)[0];
+$ke=intval($uid);
+if($ke==0){
+   
+  
+}else{
+print "\033[1;32mBài Viết:\033[1;97m$post_link\n";
+  echo "\033[1;32mID Của Bạn Là:\033[1;97m ".$uid."\n";
+}
+ 
+ 
+chay(17);
+while (true)
+{
+foreach ($acc as $list)
+{
+  $delay = 1200;
+  $buff = buff($list["user-agents"],$list["cookie"],$list["data"]);
+  $json = json_decode($buff,TRUE);
+  if($json["success"])
+  {
+    $fg++;
+    
+    print "\033[1;97m[\033[1;90m".$fg."\033[1;97m]\033[1;32mFb Chạy: \033[1;97m".$list["name"]."\033[1;97m|\033[1;32mSuccessful Buff \n";
+    
+  } else {
+    print "\033[0;37m".$json["error"]."\n";
+
+  }
+  
+}
+delay ($delay);
+}
+
+function change ($array)
+{
+$phanloai = explode(',', $array);
+    $type_react = "";
+    foreach ($phanloai as $type)
+    {
+      if(is_numeric($type))
+      {
+        switch ($type) 
+        {
+          case 1:
+            $type_react.= "type%5B%5D=like&";
+            break;
+          case 2: 
+            $type_react.= "type%5B%5D=love&";
+            break;
+          case 3: 
+            $type_react.= "type%5B%5D=haha&";
+            break;
+          case 4: 
+            $type_react.= "type%5B%5D=wow&";
+            break;
+          case 5: 
+            $type_react.= "type%5B%5D=sad&";
+            break;
+          case 6: 
+            $type_react.= "type%5B%5D=angry&";
+            break;
+        }
+      }
+    }
+    return $type_react;
+}
+function main_hacklike ($cookie, $useragent)
+{
+  $curl_get = curl_init("http://hacklike.tv/liker.php");
+  curl_setopt_array($curl_get, array(
+    CURLOPT_USERAGENT => $useragent,
+    CURLOPT_COOKIE => $cookie,
+    CURLOPT_RETURNTRANSFER => 1,
+    CURLOPT_FOLLOWLOCATION => TRUE,
+    ));
+  $close = curl_exec($curl_get); curl_close($curl_get);
+  return $close;
+}
+function buff ($useragent,$cookie, $data)
+{
+  $curl_get = curl_init("http://hacklike.tv/liker.php");
+  curl_setopt_array($curl_get, array(
+    CURLOPT_USERAGENT => $useragent,
+    CURLOPT_COOKIE => $cookie,
+    CURLOPT_POSTFIELDS => $data,
+    CURLOPT_RETURNTRANSFER => 1,
+    CURLOPT_FOLLOWLOCATION => TRUE,
+    ));
+  $close = curl_exec($curl_get); curl_close($curl_get);
+  return $close;
+}
+function random_useragent ()
+  {
+    $web_get = "https://user-agents.net/random";
+    $connect = file_get_contents($web_get);
+    $exploder = strip_tags(explode('</li>',explode('<li>', $connect)[15])[0]);
+    return $exploder;
+  }
+function delay ($time)
+{
+  $hex = 1;
+  while($hex <= $time)
+  {
+    print "\r\033[1;92m    Time Delay ".$time - $hex."              \r";
+    sleep(1);
+    $hex++;
+  }
+}
+function getid($post_link) {
+  $ch = curl_init('https://id.traodoisub.com/api.php');
+$data= ('link=').$post_link;
+$head[] = "Host:id.traodoisub.com";
+$head[] = "user-agent:Mozilla/5.0 (Linux; Android 10; CPH1933) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Mobile Safari/537.36";
+$head[] = "content-type:application/x-www-form-urlencoded; charset=UTF-8";
+curl_setopt($ch, CURLOPT_PORT, "443");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+curl_setopt($ch,CURLOPT_POSTFIELDS,$data);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $head);
+curl_setopt($ch, CURLOPT_ENCODING, "");
+curl_setopt($ch,CURLOPT_TIMEOUT,0);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+$result = curl_exec($ch);
+curl_close($ch);
+return $result;
+}
+function chay($t) {
+	$trang="\033[1;97m";
+	for ($x = 0; $x <= $t; $x++) {
+		echo $trang."= ";usleep(4000);
+		}echo"\n";}
