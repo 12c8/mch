@@ -1,0 +1,57 @@
+
+error_reporting(1); 
+$trang = "\033[1;97m";
+$luc = "\033[1;92m";
+$BBlack="\033[1;30m" ; $BRed="\033[1;31m" ; $BGreen="\033[1;32m" ; $BYellow="\033[1;33m" ; $BBlue="\033[1;34m" ;$nentrang = "\033[47m";$den = "\033[1;90m";   $BPurple="\033[1;35m" ; $BCyan="\033[1;36m" ; $BWhite="\033[1;37m" ; $Blue="\033[0;34m"; $lime="\033[1;32m"; $red="\033[1;31m"; $xanh="\033[1;32m"; $cyan="\033[1;36m"; $yellow="\033[1;33m"; 
+$chuy="\033[1;97m[\033[1;32mNote\033[1;97m]\n \033[1;31m+\033[1;32mDùng\033[1;33m Facebook \033[1;32mĐể Lấy Link Bài Viết Cần Buff\n \033[1;31m+\033[1;32mLink Phải Có Dạng\033[1;97mhttps://m.facebook.com/story.php?story_fbid= \n";  
+date_default_timezone_set("Asia/Ho_Chi_Minh"); $ip = $file_get_contents('http://kiemtraip.com/raw.php');
+date_default_timezone_set('Asia/Ho_Chi_Minh');
+$time=date('h:i');
+$ngay = date("d-m-Y");
+ $banner=
+"\r\r
+\033[0;97m╔════════════════════════════════════════════════╗
+\033[0;97m║\033[1;97m❥ \033[0;92mĐịa Chỉ iP Của Bạn Là: \033[1;97m$ip \033[1;97m       ║
+\033[0;97m║\033[1;97m❥ \033[0;92mBản quyền: \033[1;97mDoãn Đình \033[1;97m ║\033[0;97m❥ \033[1;92mĐồng Hồ: \033[1;97m$time \033[0;93m      ║
+\033[0;97m║\033[1;97m❥ \033[0;92mYoutube:\033[1;97mCám Chăm Chỉ \033[1;97m ║\033[1;97m❥ \033[0;92mHôm Nay: \033[1;97m$ngay\033[1;97m  ║
+\033[0;97m║\033[1;97m❥ \033[0;92mZalo: \033[1;97m0971.932.146 \033[1;97m   ║\033[1;97m❥ \033[0;90mChờ Đợi Là Chân Ái !\033[1;97m ║
+\033[0;97m║\033[1;97m❥ \033[0;92mMomo:\033[1;97m0971.932.146 \033[1;97m    ║\033[1;97m❥ \033[0;90mAce Cày Xu Vui Vẻ \033[1;97m   ║
+\033[0;97m║\033[1;97m❥ \033[0;92mFb:\033[1;97mfacebook.com/doandinh2004        \033[1;97m          ║
+\033[0;97m╚════════════════════════════════════════════════╝\n"; 
+ 
+ $turquoise="\033[1;34m"; $maugi="\033[1;35m"; $white= "\033[1;37m"; 
+ $useragent = "Mozilla/5.0 (Linux; Android 10; SM-J610F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.1.4577.75 Mobile Safari/537.36"; @system('clear'); 
+  echo $banner; chay(25);
+  
+  $dem = 0;
+    echo $BGreen."Nhập Cookie Machine-Liker : $BWhite"; $cookie =trim(fgets(STDIN)); echo $chuy; echo "\n"; echo $BGreen."Nhập Link Bài Viết Cần Buff : $BWhite"; $idhack =trim(fgets(STDIN)); $nhan = explode('https://m.facebook.com/story.php?story_fbid=', $idhack)[1]; $nhan = explode('&', $nhan)[0]; $uid = explode('&id=', $idhack)[1]; @system('clear');   echo $banner;   $dem = 0;
+      
+ chay(25);usleep(100000);
+ echo $lime."\033[1;32m Nhập \033[1;97m[\033[1;90m1\033[1;97m] \033[1;32mBuff Like\n"; 
+ echo $lime."\033[1;32m Nhập \033[1;97m[\033[1;90m2\033[1;97m] \033[1;32mBuff Love\n"; 
+ echo $lime."\033[1;32m Nhập \033[1;97m[\033[1;90m3\033[1;97m] \033[1;32mBuff Haha\n"; 
+ echo $lime."\033[1;32m Nhập \033[1;97m[\033[1;90m4\033[1;97m] \033[1;32mBuff Wow\n"; 
+ echo $lime."\033[1;32m Nhập \033[1;97m[\033[1;90m5\033[1;97m] \033[1;32mBuff Sab\n";
+ echo $lime."\033[1;32m Nhập \033[1;97m[\033[1;90m6\033[1;97m] \033[1;32mBuff Angry\n";
+ echo $lime."\033[1;32m Nhập \033[1;97m[\033[1;90m7\033[1;97m] \033[1;32mBuff Care\n"; 
+ echo $lime."\033[1;32m Nhập \033[1;97m[\033[1;90m8\033[1;97m] \033[1;32mBuff Randum All\n"; 
+ chay(12);
+ echo $lime."\033[1;32m Nhập Chế Độ: \033[1;97m"; $cx=trim(fgets(STDIN)); 
+ chay(20);if($cx == 1){ $nv = "1"; }elseif($cx == 2){ $nv = "2"; }elseif($cx == 3){ $nv = "4"; }elseif($cx == 4){ $nv = "3"; }elseif($cx == 5){ $nv = "7"; }elseif($cx == 6){ $nv = "8"; }elseif($cx == 7){ $nv = "16"; }else{ $nv = "1%2C2%2C16%2C4%2C3%2C7%2C8"; } while(true){ $header = array( "Host:www.machine-liker.com", "X-Requested-With:XMLHttpRequest", "User-Agent:$useragent", "Content-Type:application/x-www-form-urlencoded; charset=UTF-8", "Origin:http://www.machine-liker.com", "Referer:http://www.machine-liker.com/auto-reactions/", "cookie:$cookie", ); $data = 'url=https%3A%2F%2Fm.facebook.com%2Fstory.php%3Fstory_fbid%3D'.$nhan.'%26id%3D'.$uid.''; $mr = curl_init(); curl_setopt($mr, CURLOPT_URL, 'http://www.machine-liker.com/api/get-post-info/'); curl_setopt($mr, CURLOPT_RETURNTRANSFER, TRUE); curl_setopt($mr, CURLOPT_COOKIEFILE, 'file.txt'); curl_setopt($mr, CURLOPT_POSTFIELDS, $data); curl_setopt($mr, CURLOPT_HTTPHEADER, $header); curl_setopt($mr, CURLOPT_USERAGENT, $useragent); $mr2 = curl_exec($mr); curl_close($mr); $id = explode('id": "', $mr2)[1]; $id = explode('"', $id)[0]; $story = explode('story": "', $mr2)[1]; $story = explode('"', $story)[0]; $header = array( "Host:www.machine-liker.com", "Upgrade-Insecure-Requests:1", "User-Agent:$useragent", "Referer:http://www.machine-liker.com/auto-reactions/", "cookie:$cookie", ); $mr = curl_init(); curl_setopt($mr, CURLOPT_URL, 'http://www.machine-liker.com/send-reactions/?post_id='.$id.'&story='.$story.''); curl_setopt($mr, CURLOPT_RETURNTRANSFER, TRUE); curl_setopt($mr, CURLOPT_CUSTOMREQUEST, 'GET'); curl_setopt($mr, CURLOPT_COOKIEFILE, 'file.txt'); curl_setopt($mr, CURLOPT_HTTPHEADER, $header); curl_setopt($mr, CURLOPT_USERAGENT, $useragent); $mr2 = curl_exec($mr); curl_close($mr); $post = explode('<input type="hidden" name="post_id" value="', $mr2)[1]; $post = explode('"', $post)[0]; $header = array( "Host:www.machine-liker.com", "X-Requested-With:XMLHttpRequest", "User-Agent:$useragent", "Content-Type:application/x-www-form-urlencoded; charset=UTF-8", "Origin:http://www.machine-liker.com", "Referer:http://www.machine-liker.com/send-reactions/?post_id=".$id."&story=".$story."", "cookie:$cookie", ); $data = 'post_id='.$post.'&reactions='.$nv.'&limit=150'; $mr = curl_init(); curl_setopt($mr, CURLOPT_URL, 'http://www.machine-liker.com/api/send-reactions/'); curl_setopt($mr, CURLOPT_RETURNTRANSFER, TRUE); curl_setopt($mr, CURLOPT_COOKIEFILE, 'file.txt'); curl_setopt($mr, CURLOPT_POSTFIELDS, $data); curl_setopt($mr, CURLOPT_HTTPHEADER, $header); curl_setopt($mr, CURLOPT_USERAGENT, $useragent); $mr2 = curl_exec($mr); curl_close($mr); $nt = explode('message": "', $mr2)[1]; $nt = explode('."', $nt)[0]; $tong = explode('total_reactions":', $mr2)[1]; $tong = explode(',', $tong)[0]; $so++; echo  "{$trang}[$so{$trang}]$BRed  ⚡$BGreen $nt $BRed ⚡  $ $tong \n"; delay(600); } function delay($delay){ for($time=$delay;$time>-1;$time--){ 
+echo "  {$luc}Time Delay $time{$luc} Giây{$xn}\r";
+usleep(250000);
+echo "  {$trang}Time Delay $time{$trang} Giây{$do}\r";
+usleep(250000);
+echo "  {$luc}Time Delay $time{$luc} Giây{$vang}\r";
+usleep(250000);
+echo "  {$trang}Time Delay $time{$trang} Giây{$luc}\r";
+usleep(250000);
+echo "\r";
+ }}
+function chay($t) {
+
+	$trang="\033[1;97m";
+
+	for ($x = 0; $x <= $t; $x++) {
+		echo $trang."= ";usleep(4000);
+		}echo"\n";}
